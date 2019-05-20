@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+  <title>
+    Snippet | SoHo XI
+  </title>
+
+  <!-- Meta Info -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="version" content="4.6.0" />
+  <meta name="commit" content="" />
+
+  <script nonce="090b2916" src="assets/js/jquery.js"></script>
+  <script nonce="090b2916" src="assets/js/d3.v4.js"></script>
+  <script nonce="090b2916" src="assets/js/sohoxi.js"></script>
+  <script nonce="090b2916" src="assets/js/sohoxi-migrate-4.4.0.js"></script>
+  <script nonce="090b2916" src="angular/angular.js"></script>
+  <script nonce="090b2916" src="angular/module.js"></script>
+
+  <!-- Supplying the culture in the head is supported
+  <script nonce="090b2916" src="assets/js/sohoxi.js?v=MTIuMC4wLjAuMQ"></script>
+  <script nonce="090b2916" src="../../js/cultures/en-US.js"></script>-->
+
+
+  <script nonce="090b2916">
+    var colors;
+    var theme;
+    var font = '';
+
+
+    theme = 'light';
+
+    //If Initialize isnt called need to defer this
+    $('html').personalize({ colors: colors, theme: theme, font: font });
+  </script>
+
+  <link rel="stylesheet" id="sohoxi-stylesheet" href="assets/css/light-theme.css" type="text/css" />
+
+  <!-- Cache Bust Test
+  <link rel="stylesheet" id="sohoxi-stylesheet" href="assets/css/light-theme.css?v=MTIuMC4yMy4xMA" type="text/css"/>
+  -->
+
+  <!-- Style Sheets -->
+  <!-- <link rel="stylesheet" href="assets/css/demo.css" type="text/css"/> -->
+
+</head>
+
+<body class="no-scroll"
+  ng-app="MyApp"
+  ng-controller="TestCtrl"
+>
+  <a href="#maincontent" class="skip-link" data-translate="text">SkipToMain</a>
+  <div ng-include="svgIcons"></div>
+
+  <div class="page-container">
+    <header class="header is-personalizable">
+      <div class="toolbar">
+        <div class="title">
+          <h1>
+            <span>Snippet Angular</span>
+          </h1>
+        </div>
+        <!-- included in all "header-*.html" partials -->
+        <div class="more">
+          <button class="btn-actions page-changer" type="button">
+            <svg class="icon" focusable="false" aria-hidden="true" role="presentation">
+              <use xlink:href="#icon-more"></use>
+            </svg>
+            <span class="audible" data-translate="text">More</span>
+          </button>
+          <ul class="popupmenu is-selectable">
+            <li class="heading" role="presentation">Theme</li>
+            <li class="is-selectable is-checked">
+              <a href="#" data-theme="light-theme">Light</a>
+            </li>
+            <li class="is-selectable">
+              <a href="#" data-theme="dark-theme">Dark</a>
+            </li>
+            <li class="is-selectable">
+              <a href="#" data-theme="high-contrast-theme">High Contrast</a>
+            </li>
+            <li class="separator"></li>
+            <li class="heading" role="presentation">Personalization</li>
+            <li class="is-selectable is-checked">
+              <a data-rgbcolor="#2578A9" href="#">Azure</a>
+            </li>
+            <li class="is-selectable">
+              <a data-rgbcolor="#DB7726" href="#">Amber</a>
+            </li>
+            <li class="is-selectable">
+              <a data-rgbcolor="#9279A6" href="#">Amethyst</a>
+            </li>
+            <li class="is-selectable">
+              <a data-rgbcolor="#579E95" href="#">Turqoise</a>
+            </li>
+            <li class="is-selectable">
+              <a data-rgbcolor="#317C73" href="#">Emerald</a>
+            </li>
+            <li class="is-selectable">
+              <a data-rgbcolor="#5C5C5C" href="#">Graphite</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </header>
+
+    <div class="page-container scrollable" id="maincontent" role="main">
+      <div class="row">
+        <div class="six columns">
+          <h2>{{ templateName === 'page1' ? 'Page 1' : 'Tooltip should not display on top right corner'}}</h2>
+          <div class="field"
+            ng-if="templateName === 'page1'"
+          >
+            <button class="btn-primary"
+              ng-click="changePage('page2')"
+              xi-tooltip="'Hello World'"
+            >
+              Show bug
+            </button>
+          </div>
+          <div class="field"
+            ng-if="templateName === 'page2'"
+          >
+            <button class="btn-primary"
+              ng-click="changePage('page1')"
+            >
+              Oh no
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row top-padding">
+        <div class="twelve columns">
+          <!-- start -->
+
+          <!-- end -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script nonce="0074a138">
+    // Initialize all SoHo Xi Controls and set the locale
+    var initialLocale = 'en-US';
+    initialLocale = 'en-US';
+
+    $('body').initialize({ locale: initialLocale });
+  </script>
+</body>
+
+</html>
